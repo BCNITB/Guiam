@@ -1,0 +1,95 @@
+.background{
+  //background: url(); // Map to solve
+  position: relative;
+  overflow: hidden;
+}
+
+.text{
+  font-family: 'Game';
+  text-align: center;
+  height: 70vh;
+  animation: float 2s ease-in-out infinite;
+  font-size: 2em;
+  color: white;
+
+  .subtext{
+    font-size: 1em;
+    padding-bottom: 1.25em;
+  }
+}
+
+#mouse{
+  position: absolute;
+  top: 80vh;
+  left: 50vw;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+.controls{
+  position: absolute;
+  left: 80vw;
+  top: 80vh;
+
+  width: 150px;
+  height: 150px;
+}
+
+.btn{
+  width: 25px;
+  height: 25px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: white;
+}
+
+#up-arrow{
+  position: relative;
+  top: 0;
+  left: 55px;
+
+  background-image: url('../../assets/images/arrow.png');
+}
+
+#left-arrow{
+  background-image: url('../../assets/images/arrow.png');
+  transform: rotate(270deg);
+
+  position: relative;
+  top: 27px;
+  left: -75px;
+}
+
+#down-arrow{
+  background-image: url('../../assets/images/arrow.png');
+  background-color: white;
+  transform: rotate(180deg);
+
+  position: relative;
+  top: 55px;
+  left: -55px;
+}
+
+#right-arrow{
+  background-image: url('../../assets/images/arrow.png');
+  transform: rotate(90deg);
+
+  position: relative;
+  top: 27px;
+  left: 70px;
+}
+
+.go{
+  position: relative;
+  top: 20px;
+  left: 0;
+}
+
+#targt{
+  position: absolute;
+  top: 255px;
+  left: 380px;
+}

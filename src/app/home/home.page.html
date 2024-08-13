@@ -1,0 +1,61 @@
+<ion-content>
+
+  <!--<button (click)="UseKeyboard()">Teclado</button>-->
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Instrucciones</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>
+          Debes llevar al ratón hasta la comida. Para hacerlo has de pulsar la secuencia correcta de los controles
+          y después Mover. Al pulsar sobre el botón mover el ratón reañizará el camino indicado.
+        </p>
+        <h2>Mapa</h2>
+        <p>
+          Para llegar hasta la comida avanza 5 pasos.
+        </p>
+        <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  
+  <div aria-hidden="true">
+    <app-oncelio id="mouse"></app-oncelio>
+    <app-target id="targt"></app-target>
+    <app-map00></app-map00>
+  </div>
+
+  <ion-card *ngIf="vicoty && !playing">
+    <h2>¡Voctpria!</h2>
+    <p>Muy bien, has llevado hasta el ratón a la cominda. ¿Te atreves con el próximo reto?</p>
+  </ion-card>
+  
+  <ion-card *ngIf="gameOver && !playing">
+    <h2>¡Vuelve a intentarlo!</h2>
+    <p>
+      El ratón no ha llegado hasta la comida y sigue teniendo hambre... ¡Vuelve a intentarlo y lee bien las 
+      instrucciones!
+    </p>
+  </ion-card>
+
+
+  <ion-button (click)="setOpen(true)" shape="round" aria-label="Instrucciones">
+    <ion-icon slot="icon-only" name="heart" aria-hidden="true"></ion-icon>
+  </ion-button>
+
+  <div class="controls">
+    <button class="btn" id="up-arrow" (click)="MoveUp()" aria-label="Avanzar un paso"></button>    
+    <button class="btn" id="right-arrow" (click)="MoveRight()"aria-label="Girar a la derecha"></button>
+    <button class="go" id="go" (click)="Move()">Mover</button>
+    <button class="btn" id="left-arrow" (click)="MoveLeft()" aria-label="Girar a la izquierda"></button>
+    <button class="btn" id="down-arrow" (click)="MoveDown()" aria-label="Retroceder un paso"></button>
+  </div>
+
+</ion-content>
